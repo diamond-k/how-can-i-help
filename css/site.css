@@ -6,7 +6,10 @@
 	padding-left: 15px;
 	padding-right: 15px;
 }
-
+body {
+ padding-top: 50px;
+ padding-bottom: 20px;
+ }
 /* Set widths on the form inputs since otherwise they're 100% wide */
 input,
 select,
