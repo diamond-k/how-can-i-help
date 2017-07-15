@@ -55,20 +55,21 @@ function handleFormSubmit(event) {  // handles form submit
   } else {
     document.getElementById('email-invalid').style.display = 'none';
     var url = event.target.action;
-    var xhr = new XMLHttpRequest();
-    xhr.open('POST', url);
+    //var xhr = new XMLHttpRequest();
+    //xhr.open('POST', url);
     //xhr.withCredentials = true;
-    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    xhr.onreadystatechange = function() {
-        console.log( xhr.status, xhr.statusText )
-        console.log(xhr.responseText);
-        return;
-    };
+    //xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    //xhr.onreadystatechange = function() {
+      //  console.log( xhr.status, xhr.statusText )
+        //console.log(xhr.responseText);
+        //return;
+    //};
     // url encode form data for sending as post data
     var encoded = Object.keys(data).map(function(k) {
         return encodeURIComponent(k) + '=' + encodeURIComponent(data[k])
     }).join('&')
-    xhr.send(encoded);
+   // xhr.send(encoded);
+        $.post(url, encoded, null, "json");
   }
 }
 	
