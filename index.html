@@ -139,6 +139,9 @@
 		font-family: sans-serif;
 		opacity: 0.93;
 	}
+			body.safari {
+	 			 box-shadow: 0 0 0 9999px rgba(0,0,0,0.3);
+			}
 
 	#appView {
 		overflow: hidden;
@@ -444,6 +447,12 @@
 
     $(document).ready(function(){
 
+	    
+if (navigator.userAgent.match(/OS X.*Safari/) && ! navigator.userAgent.match(/Chrome/)) {
+   document.body.className += 'safari';
+}
+	    
+	    
     $('#email').bind('input propertychange', function() {
             if( !validEmail($(this).val()) ) {   // if email is not valid show error
                 document.getElementById('email-invalid').style.display = 'block';}
