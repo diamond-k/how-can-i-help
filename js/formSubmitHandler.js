@@ -64,7 +64,7 @@ function handleFormSubmit(event) {  // handles form submit
         console.log(xhr.responseText);
         return;
     };
-     url encode form data for sending as post data
+   //  url encode form data for sending as post data
     var encoded = Object.keys(data).map(function(k) {
         return encodeURIComponent(k) + '=' + encodeURIComponent(data[k])
     }).join('&')
