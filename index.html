@@ -439,7 +439,11 @@
   src="https://rawgit.com/how-can-i-help/how-can-i-help.github.io/master/js/formSubmitHandler.js"></script>
 <script data-cfasync="false" type="text/javascript">
 	  $(document).ready(function(){  
-	    
+
+		  function validEmail(email) {
+          var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+          return re.test(email);
+    }
     $('#email').bind('input propertychange', function() {
             if( !validEmail($(this).val()) ) {   // if email is not valid show error
                 document.getElementById('email-invalid').style.display = 'block';}
