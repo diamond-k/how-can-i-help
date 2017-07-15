@@ -511,13 +511,13 @@ function handleFormSubmit(event) {  // handles form submit
     document.getElementById('email-invalid').style.display = 'none';
     var url = event.target.action;
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', url);
-    //xhr.withCredentials = true;
-    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.open('GET', url);
+    xhr.withCredentials = true;
+   xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhr.onreadystatechange = function() {
-        console.log( xhr.status, xhr.statusText )
-        console.log(xhr.responseText);
-        return;
+       console.log( xhr.status, xhr.statusText )
+       console.log(xhr.responseText);
+     return;
     };
     // url encode form data for sending as post data
     var encoded = Object.keys(data).map(function(k) {
