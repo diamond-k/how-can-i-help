@@ -5,6 +5,7 @@
 	<meta charset="utf-8" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
 		<script src="https://apis.google.com/js/api.js" type="text/javascript"></script>
+	
 	<title>Contact Me</title>
 	<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0" />
 	<meta http-equiv="X-UA-Compatible" content="IE=9;IE=10;IE=11,IE=Edge,chrome=1" />
@@ -435,12 +436,34 @@
 		</div>
 	</div>-->
 		<!--    <div style="text-align:center" class="pos">&copy; Contact Me <script>document.write(new Date().getFullYear())</script></div>-->
+
 	
 <script type="text/javascript">
-  gapi.load('auth2', init);
+  function start() {
+  // 2. Initialize the JavaScript client library.
+  gapi.client.init({
+    'apiKey': 'AIzaSyAXVFrRYyC5e9qPeHEPB42qjsl-aoKJ4Ws',
+    // clientId and scope are optional if auth is not required.
+    'clientId': '155939310807-bpck3b37o9rbtfam26kge81l144n61a7.apps.googleusercontent.com',
+    'scope': 'https://www.googleapis.com/auth/drive https://www.googleapis.com/auth/script.external_request https://www.googleapis.com/auth/script.send_mail https://www.googleapis.com/auth/spreadsheets',
+  }).then(function() {
+    // 3. Initialize and make the API request.
+    return gapi.client.request({
+      'path': 'https://script.google.com/macros/s/AKfycbwskzHS-WHdpKfXDU5_ctpYZwk7M8ysI6eAhacIRGTAdkksxBk/exec',
+    })
+  }).then(function(response) {
+    console.log(response.result);
+  }, function(reason) {
+    console.log('Error: ' + reason.result.error.message);
+  });
+};
+// 1. Load the JavaScript client library.
+gapi.load('client', start);
 </script>
+					
 					<!-- Submit the Form using "AJAX" -->
 <script data-cfasync="false" type="text/javascript">
+
 	  $(document).ready(function(){  
 	    
     $('#email').bind('input propertychange', function() {
