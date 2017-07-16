@@ -510,6 +510,8 @@ function handleFormSubmit(event) {  // handles form submit
   } else {
     document.getElementById('email-invalid').style.display = 'none';
     var url = event.target.action;
+	  var user = gapi.auth2.getAuthInstance().currentUser.get();
+var oauthToken = user.getAuthResponse().access_token;
     var xhr = new XMLHttpRequest();
     xhr.open('POST', url);
    // xhr.withCredentials = true;
@@ -525,6 +527,9 @@ function handleFormSubmit(event) {  // handles form submit
         return encodeURIComponent(k) + '=' + encodeURIComponent(data[k])
     }).join('&')
    
+
+xhr.setRequestHeader('Authorization',
+  'Bearer ' + oauthToken.access_token);
     //$.post(url, encoded, function(value){}, "json");
     xhr.send(encoded);
   }
