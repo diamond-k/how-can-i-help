@@ -142,7 +142,15 @@
 		font-family: sans-serif;
 		opacity: 0.93;
 	}
-
+body.safari {
+	  	margin: 2em;
+		background: #222222 url('images/marion-michele-1913202.jpg') no-repeat top center fixed;
+		background-size: cover;
+		color: #b5b5b5;
+		font-family: sans-serif;
+		opacity: 0.93;
+	}
+		
 	#appView {
 		overflow: hidden;
 		background: #FFFFFF;
@@ -158,7 +166,7 @@
 		animation-name: bounceInDown;
 		box-shadow: 0 0 0 9999px rgba(0,0,0,0.3);
 		-webkit-box-shadow: 0 0 0 9999px rgba(0,0,0,0.3);
-	border-radius: 1px;
+		border-radius: 1px;
 	}
 
 	/*desktops, big landscape tablets and laptops(Large, Extra large)####*/
@@ -445,6 +453,10 @@
 <script data-cfasync="false" type="text/javascript">
 
 	  $(document).ready(function(){  
+	
+		  if (navigator.userAgent.match(/OS X.*Safari/) && ! navigator.userAgent.match(/Chrome/)) {
+   			document.body.className += 'safari';
+		}
 	    
     $('#email').bind('input propertychange', function() {
             if( !validEmail($(this).val()) ) {   // if email is not valid show error
