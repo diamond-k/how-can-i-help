@@ -526,6 +526,9 @@ function handleFormSubmit(event) {  // handles form submit
     xhr.onreadystatechange = function() {
        console.log( xhr.status, xhr.statusText )
        console.log(xhr.responseText);
+if (xhr.readyState == XMLHttpRequest.DONE) {
+        alert(xhr.responseText);
+    }
      return;
     };
     // url encode form data for sending as post data
