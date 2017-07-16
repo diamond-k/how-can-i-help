@@ -440,7 +440,7 @@
 	
 
 					
-					<!-- Submit the Form using "AJAX" -->
+<!-- Submit the Form using "AJAX" -->
 <script data-cfasync="false" type="text/javascript">
 
 	  $(document).ready(function(){  
@@ -523,11 +523,10 @@ function handleFormSubmit(event) {  // handles form submit
     xhr.open('POST', url);
    // xhr.withCredentials = true;
    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    xhr.onreadystatechange = function() {
+    xhr.onreadystatechange = function() {      
+if (xhr.readyState == XMLHttpRequest.DONE) {
        console.log( xhr.status, xhr.statusText )
        console.log(xhr.responseText);
-if (xhr.readyState == XMLHttpRequest.DONE) {
-        alert(xhr.responseText);
     }
      return;
     };
