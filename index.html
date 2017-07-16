@@ -438,28 +438,7 @@
 		<!--    <div style="text-align:center" class="pos">&copy; Contact Me <script>document.write(new Date().getFullYear())</script></div>-->
 
 	
-<script type="text/javascript">
-  function start() {
-  // 2. Initialize the JavaScript client library.
-  gapi.client.init({
-    'apiKey': 'AIzaSyAXVFrRYyC5e9qPeHEPB42qjsl-aoKJ4Ws',
-    // clientId and scope are optional if auth is not required.
-    'clientId': '155939310807-bpck3b37o9rbtfam26kge81l144n61a7.apps.googleusercontent.com',
-    'scope': 'https://www.googleapis.com/auth/drive https://www.googleapis.com/auth/script.external_request https://www.googleapis.com/auth/script.send_mail https://www.googleapis.com/auth/spreadsheets',
-  }).then(function() {
-    // 3. Initialize and make the API request.
-    return gapi.client.request({
-      'path': 'https://www.googleapis.com/gmail/v1/users',
-    })
-  }).then(function(response) {
-    console.log(response.result);
-  }, function(reason) {
-    console.log('Error: ' + reason.result.error.message);
-  });
-};
-// 1. Load the JavaScript client library.
-gapi.load('client', start);
-</script>
+
 					
 					<!-- Submit the Form using "AJAX" -->
 <script data-cfasync="false" type="text/javascript">
@@ -555,9 +534,6 @@ var oauthToken = user.getAuthResponse().access_token;
         return encodeURIComponent(k) + '=' + encodeURIComponent(data[k])
     }).join('&')
    
-
-xhr.setRequestHeader('Authorization',
-  'Bearer ' + oauthToken.access_token);
     //$.post(url, encoded, function(value){}, "json");
     xhr.send(encoded);
   }
