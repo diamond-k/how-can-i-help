@@ -523,24 +523,18 @@ function handleFormSubmit(event) {  // handles form submit
     
    // xhr.withCredentials = true;
    xhr.open('POST', url);
-	  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-   // xhr.onreadystatechange// = function() {  
-	//    if (xhr.readyState == XMLHttpRequest.DONE) {
-   //console.log( xhr.status, xhr.statusText )
-     //    console.log(xhr.responseText);		       
+	//  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+   xhr.onreadystatechange = function() {  
+	    if (xhr.readyState == XMLHttpRequest.DONE) {
+   console.log( xhr.status, xhr.statusText )
+        console.log(xhr.responseText);		       
  //if (xhr.readyState == XMLHttpRequest.DONE) {
         // alert(xhr.responseText);
 //   }
-	//    }
-    //   return;		      
-   // };
-	 xhr.onreadystatechange = setTimeout(function() {  
-	    if (xhr.readyState == XMLHttpRequest.DONE) {
-   console.log( xhr.status, xhr.statusText )
-         console.log(xhr.responseText);		       
-    }
-       return;		      
-    }, 2000);
+	  }
+     return;		      
+   };
+	
     // url encode form data for sending as post data
 	  
     var encoded = Object.keys(data).map(function(k) {
@@ -548,7 +542,7 @@ function handleFormSubmit(event) {  // handles form submit
     }).join('&')
  
     //$.post(url, encoded, function(value){}, "json");
-    xhr.send(encoded);
+ xhr.send(encoded);   
   }
 }
 					</script>
