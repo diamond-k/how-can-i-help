@@ -521,18 +521,18 @@ function handleFormSubmit(event) {  // handles form submit
     var xhr = new XMLHttpRequest();
     
    // xhr.withCredentials = true;
-   xhr.open('POST', url);
+   xhr.open('POST', url, false);
 	 xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-   xhr.onreadystatechange = function() {  
-	    if (xhr.readyState == XMLHttpRequest.DONE) {
-   console.log( xhr.status, xhr.statusText )
-        console.log(xhr.responseText);		       
+   //xhr.onreadystatechange = function() {  
+	//    if (xhr.readyState == XMLHttpRequest.DONE) {
+   //console.log( xhr.status, xhr.statusText )
+     //   console.log(xhr.responseText);		       
  //if (xhr.readyState == XMLHttpRequest.DONE) {
         // alert(xhr.responseText);
 //   }
-	  }
-     return;		      
-   };
+	//  }
+   //  return;		      
+ //  };
 	
     // url encode form data for sending as post data
 	  
