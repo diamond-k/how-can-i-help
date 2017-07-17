@@ -15,12 +15,11 @@
 	<meta name="keywords" content="contact form, help, how can i help you, help you">
 
 	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-<link rel="manifest" href="manifest.json">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-<meta name="theme-color" content="#ffffff">
-
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+	<link rel="manifest" href="manifest.json">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="theme-color" content="#ffffff">
 
 	<link rel="stylesheet" href="css/site.css"  type="text/css"/>
 	<link rel="stylesheet" href="css/site.min.css" asp-append-version="true" type="text/css" />
@@ -499,30 +498,20 @@
 				</div>
 			</form>
 		</div>
-
-		<!-- Thankyou Message On form submit -->
-		<!--<div style="display:none;" id="thankyou_message">
-		<h1 class="heading-1">Thanks!</h1>
-		<div class="text">
-			<p>I’ve got your message and will be in touch soon.</p>
-		</div>
-	</div>-->
 		<!--    <div style="text-align:center" class="pos">&copy; Contact Me <script>document.write(new Date().getFullYear())</script></div>-->
 
-	
-
-					
-<!-- Submit the Form using "AJAX" -->
+<!-- Submit form -->
 <script data-cfasync="false" type="text/javascript">
 
-	  $(document).ready(function(){  
-	
-		  if (navigator.userAgent.match(/OS X.*Safari/) && ! navigator.userAgent.match(/Chrome/)) {
-   			document.body.className += 'safari';
-		}
+	$(document).ready(function(){  
+		//check if user is using Safari
+	if (navigator.userAgent.match(/OS X.*Safari/) && ! navigator.userAgent.match(/Chrome/)) 
+	{
+   		document.body.className += 'safari';
+	}
 	    
-    $('#email').bind('input propertychange', function() {
-            if( !validEmail($(this).val()) ) {   // if email is not valid show error
+		$('#email').bind('input propertychange', function() {
+         if( !isValid($(this).val()) ) {   // if email is not valid show error
                 document.getElementById('email-invalid').style.display = 'block';}
         else {
             document.getElementById('email-invalid').style.display = 'none';}
@@ -537,10 +526,12 @@
             }
         });
     });
-   function validEmail(email) {
+	
+   function isValid(email) {
           var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
           return re.test(email);
     }
+	
 // get all data in form and return object
 function getFormData() {
   var form = document.getElementById("myForm");
@@ -584,30 +575,27 @@ function getFormData() {
   console.log(data);
   return data;
 }
-function handleFormSubmit(event) {  // handles form submit
-  event.preventDefault();           // submitting via xhr below
-  var data = getFormData();         // get the values submitted in the form
-  if( !validEmail(data.email) ) {   // if email is not valid show error
-    document.getElementById('email-invalid').style.display = 'block';
-    return false;
+	
+	
+function handleFormSubmit(event) { 
+  event.preventDefault();          
+  var data = getFormData();        
+  if( !isValid(data.email) ) { 
+    	document.getElementById('email-invalid').style.display = 'block';
+    	return false;
   } else {
-    document.getElementById('email-invalid').style.display = 'none';
-    var url = event.target.action;
-    var xhr = new XMLHttpRequest();   
-   // xhr.withCredentials = true;
-   xhr.open('POST', url);
-   xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-   xhr.onreadystatechange = function() {  
-   if (xhr.readyState == XMLHttpRequest.DONE) {
-   console.log( xhr.status, xhr.statusText )
-   console.log(xhr.responseText);		       
- //if (xhr.readyState == XMLHttpRequest.DONE) {
-        // alert(xhr.responseText);
-//   }
+    	document.getElementById('email-invalid').style.display = 'none';
+    	var url = event.target.action;
+    	var xhr = new XMLHttpRequest();   
+   	xhr.open('POST', url);
+   	xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+   	xhr.onreadystatechange = function() {  
+   	if (xhr.readyState == XMLHttpRequest.DONE) {
+   	console.log( xhr.status, xhr.statusText )
+   	console.log(xhr.responseText);		      
      }
      return;		      
   };
-	
     // url encode form data for sending as post data	  
     var encoded = Object.keys(data).map(function(k) {
         return encodeURIComponent(k) + '=' + encodeURIComponent(data[k])
