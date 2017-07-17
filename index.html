@@ -93,6 +93,27 @@
 			transform: translateY(0);
 		}
 	}
+		
+		
+	@-o-keyframes bounce {
+		0% {
+			opacity: 0;
+			-o-transform: translateY(-2000px);
+		}
+
+		60% {
+			opacity: 1;
+			-o-transform: translateY(30px);
+		}
+
+		80% {
+			-o-transform: translateY(-10px);
+		}
+
+		100% {
+			-o-transform: translateY(0);
+		}
+	}
 
 	@-webkit-keyframes bounce {
 		0% {
@@ -142,7 +163,7 @@
 		font-family: sans-serif;
 		opacity: 0.93;
 	}
-body.safari {
+	body.safari {
 	  	margin: 0.5em;
 		background: #222222 url('images/marion-michele-1913202.jpg') no-repeat top center fixed;
 		background-size: cover;
@@ -155,20 +176,31 @@ body.safari {
 		overflow: hidden;
 		background: #FFFFFF;
 		top: -42px;
+		
 		-moz-animation-fill-mode: both;
 		-moz-animation-duration: 1.5s;
 		-moz-animation-name: bounce;
+		
 		-webkit-appearance: none;
 		-webkit-animation-fill-mode: both;
 		-webkit-animation-duration: 1.5s;
 		-webkit-animation-name: bounce;
+		
+		-o-animation-fill-mode: both;
+		-o-animation-duration: 1.5s;
+		-o-animation-name: bounce;
+		
 		animation-fill-mode: both;
 		animation-duration: 1.5s;
-		animation-name: bounce;
-		box-shadow: 0 0 0 9999px rgba(0,0,0,0.3);
+		animation-name: bounce;		
+		
 		-webkit-box-shadow: 0 0 0 9999px rgba(0,0,0,0.3);
+		-o-box-shadow: 0 0 0 9999px rgba(0,0,0,0.3);
+		box-shadow: 0 0 0 9999px rgba(0,0,0,0.3);
+		
 		-moz-border-radius:3px; 
     		-webkit-border-radius: 3px;
+		-o-border-radius: 3px;
     		border-radius: 3px;
 
 	}
@@ -182,19 +214,30 @@ body.safari {
 			left: 50%;
 			margin: -255px 0 0 -200px;
 			background: #FFFFFF;
-			box-shadow: 0 0 0 9999px rgba(0,0,0,0.3);
-			-webkit-box-shadow: 0 0 0 9999px rgba(0,0,0,0.3);
+						
 			-moz-animation-fill-mode: both;
 			-moz-animation-duration: 1.5s;
 			-moz-animation-name: bounce;
+			
 			-webkit-animation-fill-mode: both;
 			-webkit-animation-duration: 1.5s;
 			-webkit-animation-name: bounce;
+			
+			-o-animation-fill-mode: both;
+			-o-animation-duration: 1.5s;
+			-o-animation-name: bounce;
+			
 			animation-fill-mode: both;
 			animation-duration: 1.5s;
 			animation-name: bounce;
+			
+			-webkit-box-shadow: 0 0 0 9999px rgba(0,0,0,0.3);
+			-o-box-shadow: 0 0 0 9999px rgba(0,0,0,0.3);
+			box-shadow: 0 0 0 9999px rgba(0,0,0,0.3);			
+			
 			-moz-border-radius:3px; 
     			-webkit-border-radius: 3px;
+			-o-border-radius: 3px;
     			border-radius: 3px;
 		}
 	}
@@ -208,19 +251,30 @@ body.safari {
 			left: 50%;
 			margin: -255px 0 0 -200px;
 			background: #FFFFFF;
-			box-shadow: 0 0 0 9999px rgba(0,0,0,0.3);
-			-webkit-box-shadow: 0 0 0 9999px rgba(0,0,0,0.3);
+
 			-moz-animation-fill-mode: both;
 			-moz-animation-duration: 1.5s;
 			-moz-animation-name: bounce;
+			
 			-webkit-animation-fill-mode: both;
 			-webkit-animation-duration: 1.5s;
 			-webkit-animation-name: bounce;
+			
+			-o-animation-fill-mode: both;
+			-o-animation-duration: 1.5s;
+			-o-animation-name: bounce;
+			
 			animation-fill-mode: both;
 			animation-duration: 1.5s;
 			animation-name: bounce;
+			
+			-webkit-box-shadow: 0 0 0 9999px rgba(0,0,0,0.3);
+			-o-box-shadow: 0 0 0 9999px rgba(0,0,0,0.3);
+			box-shadow: 0 0 0 9999px rgba(0,0,0,0.3);
+			
 			-moz-border-radius:3px; 
     			-webkit-border-radius: 3px;
+			-o-border-radius: 3px;
     			border-radius: 3px;
 		}
 	}
