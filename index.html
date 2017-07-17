@@ -501,7 +501,7 @@
 		<!--    <div style="text-align:center" class="pos">&copy; Contact Me <script>document.write(new Date().getFullYear())</script></div>-->
 
 <!-- Submit form -->
-<script type="text/javascript">
+<script data-cfasync="false" type="text/javascript">
 
 	$(document).ready(function(){  
 		//check if user is using Safari
@@ -591,8 +591,8 @@ function handleFormSubmit(event) {
    	xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
    	xhr.onreadystatechange = function() {  
    	if (xhr.readyState == XMLHttpRequest.DONE) {
-   	console.log( xhr.status, xhr.statusText )
-   	console.log(xhr.responseText);		      
+   	console.log( xhr.status, xhr.statusText )  		
+	setTimeout(function(){ console.log(xhr.responseText); }, 3000);	
      }
      return;		      
   };
