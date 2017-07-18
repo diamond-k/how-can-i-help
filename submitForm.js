@@ -54,7 +54,9 @@ function handleFormSubmit(event) {
     if (!isValid(data.email)) {
         document.getElementById('email-invalid').style.display = 'block';
         return false;
-    } else {
+    } else {         
+        var btn = document.getElementById("submitbtn");
+        btn.innerHTML = "<i class='fa fa-paper-plane'></i>&nbsp;Sending...";
         document.getElementById('email-invalid').style.display = 'none';
         var url = event.target.action;
         var xhr = new XMLHttpRequest();
@@ -65,6 +67,8 @@ function handleFormSubmit(event) {
                 console.log(xhr.status, xhr.statusText)
                 console.log(xhr.responseText);
                 // alert("test");	
+                 window.location.href = "http://google.com";		
+                //window.location.replace("http://edyson.acnshop.eu/default.asp?CO_LA=GB_en");
             }
             return;
         };
