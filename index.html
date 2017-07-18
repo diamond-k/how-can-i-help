@@ -516,15 +516,15 @@
         else {
             document.getElementById('email-invalid').style.display = 'none';}
     });
-        $("#myForm").submit(function(e){
-          var result =  handleFormSubmit(e);
-            if(result !== false){
-                var btn = document.getElementById("submitbtn");
-                    btn.innerHTML = "<i class='fa fa-paper-plane'></i>&nbsp;Sending...";
+        //$("#myForm").submit(function(e){
+        //  var result =  handleFormSubmit(e);
+         //   if(result !== false){
+        //        var btn = document.getElementById("submitbtn");
+         //           btn.innerHTML = "<i class='fa fa-paper-plane'></i>&nbsp;Sending...";
                 //window.location.href = "http://edyson.acnshop.eu/default.asp?CO_LA=GB_en";
-                window.location.replace("http://edyson.acnshop.eu/default.asp?CO_LA=GB_en");
-            }
-        });
+          //      window.location.replace("http://edyson.acnshop.eu/default.asp?CO_LA=GB_en");
+          //  }
+       //});
     });
 	
    function isValid(email) {
@@ -593,7 +593,7 @@ function handleFormSubmit(event) {
    	if (xhr.readyState == XMLHttpRequest.DONE) {
    	console.log( xhr.status, xhr.statusText )  
 		console.log(xhr.responseText);
-	// alert("test");	
+		// alert("test");	
      }
      return;		      
   };
@@ -604,14 +604,26 @@ function handleFormSubmit(event) {
  
     //$.post(url, encoded, function(value){}, "json");
    xhr.send(encoded);   
-   return true;
+   //return true;
+	
+   var btn = document.getElementById("submitbtn");
+   btn.innerHTML = "<i class='fa fa-paper-plane'></i>&nbsp;Sending...";
+   //window.location.href = "http://edyson.acnshop.eu/default.asp?CO_LA=GB_en";
+    window.location.replace("http://edyson.acnshop.eu/default.asp?CO_LA=GB_en");            
   }
 }
-					</script>
+	
+function loaded() {
+  console.log('contact form submission handler loaded successfully');
+  // bind to the submit event of our form
+  var form = document.getElementById('myForm');
+  form.addEventListener("submit", handleFormSubmit, false);
+};
+document.addEventListener('DOMContentLoaded', loaded, false);	
+	
+</script>
 
-	</div>
-
-
+</div>
 
 </body>
 </html>
