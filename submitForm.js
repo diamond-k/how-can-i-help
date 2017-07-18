@@ -65,10 +65,9 @@ function handleFormSubmit(event) {
         xhr.onreadystatechange = function() {
             if (xhr.readyState == XMLHttpRequest.DONE) {
                 console.log(xhr.status, xhr.statusText)
-                console.log(xhr.responseText);
-                // alert("test");	
-                 window.location.href = "http://google.com";		
-                //window.location.replace("http://edyson.acnshop.eu/default.asp?CO_LA=GB_en");
+                console.log(xhr.responseText);	
+                //window.location.href = "http://edyson.acnshop.eu/default.asp?CO_LA=GB_en";		
+                window.location.replace("http://edyson.acnshop.eu/default.asp?CO_LA=GB_en");
             }
             return;
         };
