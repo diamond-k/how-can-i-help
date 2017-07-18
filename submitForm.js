@@ -76,11 +76,6 @@ function handleFormSubmit(event) {
         //$.post(url, encoded, function(value){}, "json");
         xhr.send(encoded);
         //return true;
-
-        // var btn = document.getElementById("submitbtn");
-        // btn.innerHTML = "<i class='fa fa-paper-plane'></i>&nbsp;Sending...";
-        //window.location.href = "http://edyson.acnshop.eu/default.asp?CO_LA=GB_en";
-        // window.location.replace("http://edyson.acnshop.eu/default.asp?CO_LA=GB_en");
     }
 }
 
