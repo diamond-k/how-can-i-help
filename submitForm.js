@@ -57,6 +57,7 @@ function handleFormSubmit(event) {
     } else {         
         var btn = document.getElementById("submitbtn");
         btn.innerHTML = "<i class='fa fa-paper-plane'></i>&nbsp;Sending...";
+        btn.disabled = true;
         document.getElementById('email-invalid').style.display = 'none';
         var url = event.target.action;
         var xhr = new XMLHttpRequest();
