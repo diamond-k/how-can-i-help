@@ -508,21 +508,14 @@ $(document).ready(function() {
         document.body.className += 'safari'
     }
 
-   // $('#email').bind('input propertychange', function() {
-    //    if (!isValid($(this).val())) { // if email is not valid show error
-    //        document.getElementById('email-invalid').style.display = 'block';
-    //    } else {
-     //       document.getElementById('email-invalid').style.display = 'none';
-    //    }
-  //  });
-	
-$('#email').change(function() {
+   $('#email').bind('input propertychange', function() {
         if (!isValid($(this).val())) { // if email is not valid show error
-            document.getElementById('email-invalid').style.display = 'block';
-        } else {
+           document.getElementById('email-invalid').style.display = 'block';
+       } else {
             document.getElementById('email-invalid').style.display = 'none';
-        }
-    });
+       }
+  });
+	
 
 
 });							
