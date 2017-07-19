@@ -50,7 +50,6 @@ function getFormData() {
 
 function handleFormSubmit(event) {
     event.preventDefault();
-     var formSubmitted = false;
     var data = getFormData();
     if (!isValid(data.email)) {
         document.getElementById('email-invalid').style.display = 'block';
