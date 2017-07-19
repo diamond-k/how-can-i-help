@@ -50,6 +50,7 @@ function getFormData() {
 
 function handleFormSubmit(event) {
     event.preventDefault();
+     var formSubmitted = false;
     var data = getFormData();
     if (!isValid(data.email)) {
         document.getElementById('email-invalid').style.display = 'block';
@@ -86,7 +87,7 @@ function handleFormSubmit(event) {
 }
 
 function loaded() {
-    var formSubmitted = false;
+   
     console.log('contact form submission handler loaded successfully');
     // bind to the submit event of our form
     var form = document.getElementById('myForm');
