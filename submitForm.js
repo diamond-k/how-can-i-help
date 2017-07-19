@@ -53,14 +53,16 @@ function handleFormSubmit(event) {
     event.preventDefault();
     var data = getFormData();
     if (!isValid(data.email)) {
-        document.getElementById('email-invalid').style.display = 'block';
+        //document.getElementById('email-invalid').style.display = 'block';
+         $("#email-invalid").show();
         return false;
     } else {  
         if(formSubmitted != true){
         formSubmitted = true;
         var btn = document.getElementById("submitbtn");
         btn.innerHTML = "<i class='fa fa-paper-plane'></i>&nbsp;Sending...";     
-        document.getElementById('email-invalid').style.display = 'none';
+        //document.getElementById('email-invalid').style.display = 'none';
+        $("#email-invalid").hide();
         var url = event.target.action;
         var xhr = new XMLHttpRequest();
         xhr.open('POST', url);
