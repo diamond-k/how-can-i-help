@@ -54,10 +54,11 @@ function handleFormSubmit(event) {
     if (!isValid(data.email)) {
         document.getElementById('email-invalid').style.display = 'block';
         return false;
-    } else {         
+    } else {  
+        if(formSubmitted != true){
+        formSubmitted = true;
         var btn = document.getElementById("submitbtn");
-        btn.innerHTML = "<i class='fa fa-paper-plane'></i>&nbsp;Sending...";
-        btn.disabled = true;
+        btn.innerHTML = "<i class='fa fa-paper-plane'></i>&nbsp;Sending...";     
         document.getElementById('email-invalid').style.display = 'none';
         var url = event.target.action;
         var xhr = new XMLHttpRequest();
@@ -79,11 +80,13 @@ function handleFormSubmit(event) {
 
         //$.post(url, encoded, function(value){}, "json");
         xhr.send(encoded);
+        }
         //return true;
     }
 }
 
 function loaded() {
+    var formSubmitted = false;
     console.log('contact form submission handler loaded successfully');
     // bind to the submit event of our form
     var form = document.getElementById('myForm');
