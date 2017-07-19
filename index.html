@@ -501,7 +501,9 @@
 
 <!-- Submit form -->
 <script type="text/javascript">
+	
 $(document).ready(function() {
+	
     //check if user is using Safari
     if (navigator.userAgent.match(/OS X.*Safari/) && !navigator.userAgent.match(/Chrome/)) {
         document.body.className += 'safari'
@@ -516,25 +518,15 @@ $(document).ready(function() {
   });
 	
 $(document).on('touchstart', '#submitbtn', function(event){
-        if(event.handled === false) return
-        event.stopPropagation();
-        event.preventDefault();
-        event.handled = true;
         $("#submitbtn").css("background-color", "#a4bc4f");
 });
 
 
 $(document).on('touchend', '#submitbtn', function(event){
-        if(event.handled === false) return
-        event.stopPropagation();
-        event.preventDefault();
-        event.handled = true;
         $("#submitbtn").css("background-color", "#b5cd60");       
 });
-
-
-
-});							
+});
+	
 </script>
 <script data-cfasync="false" type="text/javascript" src="submitForm.js"></script>
 </div>
