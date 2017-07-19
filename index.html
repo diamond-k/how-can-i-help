@@ -384,7 +384,7 @@
 		/*background-color: #60AA14;*/
 	}
 
-		#submitbtn:hover, #submitbtn:active {
+		#submitbtn:hover {
 			background: #a4bc4f;
 		}
 	.button-xlarge {
@@ -515,6 +515,23 @@ $(document).ready(function() {
        }
   });
 	
+$(document).on('touchstart', '#submitbtn', function(event){
+        if(event.handled === false) return
+        event.stopPropagation();
+        event.preventDefault();
+        event.handled = true;
+        $("#submitbtn").css("background-color", "#a4bc4f");
+});
+
+
+$(document).on('touchend', '#submitbtn', function(event){
+        if(event.handled === false) return
+        event.stopPropagation();
+        event.preventDefault();
+        event.handled = true;
+        $("#submitbtn").css("background-color", "#b5cd60");       
+});
+
 
 
 });							
