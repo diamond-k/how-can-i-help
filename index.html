@@ -487,15 +487,14 @@
         </div>
         <!--    <div style="text-align:center" class="pos">&copy; Contact Me <script>document.write(new Date().getFullYear())</script></div>-->
         <!-- Submit form -->
-        <script type="text/javascript">
+<script type="text/javascript">
 
 $(document).ready(function() {
 
     function isValid(email) {
-        var re = /^([\w-]+(?:\.[\w-]+)*)@@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+        var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
         return re.test(email);
     }
-
 
     //check if user is using Safari
     if (navigator.userAgent.match(/OS X.*Safari/) && !navigator.userAgent.match(/Chrome/)) {
@@ -522,8 +521,8 @@ $(document).on('touchend', '#submitbtn', function(event){
 });
 });
 
-        </script>
-        <script data-cfasync="false" type="text/javascript" src="submitForm.js"></script>
-    </div>
+</script>
+<script data-cfasync="false" type="text/javascript" src="submitForm.js"></script>
+</div>
 </body>
 </html>
