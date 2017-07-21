@@ -459,6 +459,17 @@
 		color: #999;
     		font-weight: 100;
 	}
+		
+			#myForm .err {
+			height: 0px;
+		}
+
+	#myForm .err img {
+		width: 17px;
+		left: calc(100% - 35px);
+		position: relative;
+		top: -42px;
+	}
     </style>
 </head>
 <body>
@@ -476,11 +487,11 @@
                     <input type="text" class="border" id="fullname" name="full name" placeholder="Full name" />
                 </div>
                 <div class="pure-group">
-                    <!-- <label id="namelbl" for="name">Name: </label>-->
-                    <input class="border" type="text" id="number" name="number" placeholder="Phone number" required="true" />
-                    <span id="number-invalid" style="display:none">
-                        Please enter a valid phone number
-                    </span>
+                   <input class="border" type="text" id="number" name="number" placeholder="Phone number" required="true" />
+                   <div class="err"><img src="images/alert-icon-1551.png"  /></div>
+		   <span id="number-invalid" style="display:none">
+			Please enter your phone number
+		   </span>
                 </div>   		    
 		<div class="pure-group">
                     <!-- <label id="messagelbl" for="message">Message: </label>-->
@@ -489,7 +500,8 @@
                 <div class="pure-group">
                     <!--<label id="emaillbl" for="email"><i>Your</i> Email Address:</label>-->
                     <input class="border" id="email" name="email" type="email" required="true" placeholder="Email" />
-                    <span id="email-invalid" style="display:none">
+                    	<div class="err"><img src="images/alert-icon-1551.png"/></div>
+			<span id="email-invalid" style="display:none">
                         Please enter a valid email address
                     </span>
                 </div>
