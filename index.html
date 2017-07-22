@@ -527,7 +527,7 @@ $(document).ready(function() {
     }
 
     function isNumberValid(number) {
-        var re = [0-9\-\(\)\s]+.;
+        var re = /\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/;
         return re.test(number);
     }	
 	
