@@ -342,6 +342,8 @@
 		/*background: #F0F0F0;*/
 		border: 1px solid #ccc;
 	}
+		
+		
     /*for typed input text*/
         input[type="text"] {
             width: 290px;
@@ -525,7 +527,7 @@ $(document).ready(function() {
     }
 
     function isNumberValid(number) {
-        var re = /([0-9]{10})|(\([0-9]{3}\)\s+[0-9]{3}\-[0-9]{4})/;
+        var re = [0-9\-\(\)\s]+;
         return re.test(number);
     }	
 	
