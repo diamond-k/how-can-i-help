@@ -3,6 +3,10 @@ function isValid(email) {
     var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
     return re.test(email);
 }
+ function isNumberValid(number) {
+        var re = [0-9\-\(\)\s]+;
+        return re.test(number);
+ }	
 
 // get all data in form and return object
 function getFormData() {
@@ -52,11 +56,23 @@ function getFormData() {
 function handleFormSubmit(event) {
     event.preventDefault();
     var data = getFormData();
+    var hasError = false;
+    
     if (!isValid(data.email)) {
         //document.getElementById('email-invalid').style.display = 'block';
          $("#email-invalid").show();
+        hasError= true;
+    } 
+    
+    if (!isNumberValid(data.email)) {
+        //document.getElementById('email-invalid').style.display = 'block';
+         $("#email-invalid").show();
+        hasError= true;
+    } 
+    if(hasError == true){
         return false;
-    } else {  
+    }
+    
         if(formSubmitted != true){
         formSubmitted = true;
         var btn = document.getElementById("submitbtn");
@@ -84,8 +100,7 @@ function handleFormSubmit(event) {
         //$.post(url, encoded, function(value){}, "json");
         xhr.send(encoded);
         }
-        //return true;
-    }
+        //return true;    
 }
 
 function loaded() {
