@@ -524,6 +524,11 @@ $(document).ready(function() {
         return re.test(email);
     }
 
+    function isNumberValid(number) {
+        var re = /([0-9]{10})|(\([0-9]{3}\)\s+[0-9]{3}\-[0-9]{4})/;
+        return re.test(number);
+    }	
+	
     //check if user is using Safari
     if (navigator.userAgent.match(/OS X.*Safari/) && !navigator.userAgent.match(/Chrome/)) {
         document.body.className += 'safari';
@@ -532,10 +537,18 @@ $(document).ready(function() {
    $('#email').bind('input propertychange', function() {
         if (!isValid($(this).val())) { // if email is not valid show error
           // document.getElementById('email-invalid').style.display = 'block';
-		  $("#email-invalid").show();
+		$("#email-invalid").show();
        } else {
            // document.getElementById('email-invalid').style.display = 'none';
 	        $("#email-invalid").hide();
+       }
+  });
+	
+    $('#number').bind('input propertychange', function() {
+        if (!isNumberValid($(this).val())) { // if number is not valid show error
+		$("#number-invalid").show();
+       } else {
+	        $("#number-invalid").hide();
        }
   });
 
