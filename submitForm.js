@@ -4,7 +4,7 @@ function isValid(email) {
     return re.test(email);
 }
  function isNumberValid(number) {
-        var re = [0-9\-\(\)\s]+;
+        var re = [0-9\-\(\)\s]+.;
         return re.test(number);
  }	
 
@@ -64,9 +64,9 @@ function handleFormSubmit(event) {
         hasError= true;
     } 
     
-    if (!isNumberValid(data.email)) {
+    if (!isNumberValid(data.number)) {
         //document.getElementById('email-invalid').style.display = 'block';
-         $("#email-invalid").show();
+         $("#number-invalid").show();
         hasError= true;
     } 
     if(hasError == true){
