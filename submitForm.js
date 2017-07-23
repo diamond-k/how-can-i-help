@@ -92,7 +92,7 @@ function handleFormSubmit(event) {
                 console.log(xhr.status, xhr.statusText)
                 console.log(xhr.responseText);	
                 //window.location.href = "http://edyson.acnshop.eu/default.asp?CO_LA=GB_en";		
-                window.location.replace("http://edyson.acnshop.eu/default.asp?CO_LA=GB_en");
+                window.location.replace("http://edyson.acnshop.eu");
             }
             return;
         };
