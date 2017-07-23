@@ -4,6 +4,12 @@ function isValid(email) {
     return re.test(email);
 }
 
+
+function isNumberValid(number) {
+    var re = /^(\(?(0|\+44)[1-9]{1}\d{1,4}?\)?\s?\d{3,4}\s?\d{3,4})$/;
+    return re.test(number);
+}	
+
 // get all data in form and return object
 function getFormData() {
     var form = document.getElementById("myForm");
@@ -56,13 +62,14 @@ function handleFormSubmit(event) {
     
     if (!isValid(data.email)) {
         //document.getElementById('email-invalid').style.display = 'block';
-         $("#email-invalid").show();
+        $("#email-invalid").show();
+        $("#imgEmail").show();
         hasError= true;
     } 
     
    if (!isNumberValid(data.number)) {
-        //document.getElementById('email-invalid').style.display = 'block';
          $("#number-invalid").show();
+         $("#imgNumber").show();
          hasError= true;
    } 
     
