@@ -26,6 +26,15 @@
           asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
    
 	<style type="text/css">
+		
+		
+input::-webkit-contacts-auto-fill-button {
+  visibility: hidden;
+  display: none !important;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+}
 	/*** Keyframes for bounce feature ***/
 	@-ms-keyframes bounce {
 		0% {
