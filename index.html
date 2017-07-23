@@ -562,7 +562,7 @@ $(document).ready(function() {
 	
     $('#number').bind('input propertychange', function() {
         if (!isNumberValid($(this).val())) { // if number is not valid show error
-		$("#imgNumber").hide();
+		$("#imgNumber").show();
 		$("#number-invalid").show();
        } else {
 	       $("#imgNumber").hide();
