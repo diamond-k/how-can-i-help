@@ -1,12 +1,8 @@
 var formSubmitted = false;
-function isValid(email) {
-    var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
-    return re.test(email);
-}
- function isNumberValid(number) {
-        var re = [0-9\-\(\)\s]+.;
-        return re.test(number);
- }	
+//function isValid(email) {
+ //   var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+ //   return re.test(email);
+//}
 
 // get all data in form and return object
 function getFormData() {
