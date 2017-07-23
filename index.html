@@ -27,6 +27,9 @@
    
 	<style type="text/css">
 		
+	emailTick .fa {
+ color: #47AD09!important;
+}	
 		
 input::-webkit-contacts-auto-fill-button {
   visibility: hidden;
@@ -140,7 +143,7 @@ input::-webkit-contacts-auto-fill-button {
 	}
 
 
-	#email-invalid, #number-invalid {
+	/*#email-invalid, #number-invalid {
 		font-size: 12px;
 		line-height: 1.9;
 		font-weight: 400;
@@ -157,7 +160,7 @@ input::-webkit-contacts-auto-fill-button {
 		max-width: 100%;
 		padding-top: 0px;
 		margin-left: 11px;
-	}
+	}*/
 
 	body {
 		margin: 1em 0.5em 0.5em 0.5em;
@@ -501,9 +504,9 @@ input::-webkit-contacts-auto-fill-button {
                 <div class="pure-group">
                    <input class="border" type="text" id="number" name="number" placeholder="Phone number" required="true" />
                    <div class="err"><img id="imgNumber" src="images/alert-icon-1551.png"/></div>
-		   <span id="number-invalid" style="display:none">
+		   <!--<span id="number-invalid" style="display:none">
 			Please enter a valid phone number
-		   </span>
+		   </span>-->
                 </div>   		    
 		<div class="pure-group">
                     <!-- <label id="messagelbl" for="message">Message: </label>-->
@@ -512,10 +515,12 @@ input::-webkit-contacts-auto-fill-button {
                 <div class="pure-group">
                     <!--<label id="emaillbl" for="email"><i>Your</i> Email Address:</label>-->
                     <input class="border" id="email" name="email" type="email" required="true" placeholder="Email" />
-                    <div class="err"><img id="imgEmail" src="images/alert-icon-1551.png"/></div>
-		    <span id="email-invalid" style="display:none">
+			<div class="emailTick"><i class="fa fa-check-circle fa-fw"></i></div>
+			
+		<!--<div class="err"><img id="imgEmail" src="images/alert-icon-1551.png"/></div>-->
+		   <!-- <span id="email-invalid" style="display:none">
                         Please enter a valid email address
-                    </span>
+                    </span>-->
                 </div>
                 <div class="wrapper">
                     <button type="submit" id="submitbtn" class="button-success pure-button button-xlarge">
@@ -539,7 +544,7 @@ $(document).ready(function() {
     }
 
     function isNumberValid(number) {
-      var re = /^(\(?(0|\+44)[1-11]{1}\d{1,4}?\)?\s?\d{3,4}\s?\d{3,4})$/;
+      var re = /^(\(?(0|\+44)[1-9]{1}\d{1,4}?\)?\s?\d{3,4}\s?\d{3,4})$/;
       return re.test(number);
     }	
 	
