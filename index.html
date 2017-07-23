@@ -531,16 +531,17 @@ input::-webkit-contacts-auto-fill-button {
 $(document).ready(function() {
 
    $("#imgEmail").hide();
+   $("#imgNumber").hide();
 	
     function isValid(email) {
         var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
         return re.test(email);
     }
 
-  //  function isNumberValid(number) {
-   //     var re = /\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/;
-   //     return re.test(number);
-  //  }	
+    function isNumberValid(number) {
+      var re = /^(\(?(0|\+44)[1-9]{1}\d{1,4}?\)?\s?\d{3,4}\s?\d{3,4})$/;
+      return re.test(number);
+    }	
 	
     //check if user is using Safari
     if (navigator.userAgent.match(/OS X.*Safari/) && !navigator.userAgent.match(/Chrome/)) {
@@ -561,9 +562,11 @@ $(document).ready(function() {
 	
     $('#number').bind('input propertychange', function() {
         if (!isNumberValid($(this).val())) { // if number is not valid show error
+		$("#imgNumber").hide();
 		$("#number-invalid").show();
        } else {
-	        $("#number-invalid").hide();
+	       $("#imgNumber").hide();
+	       $("#number-invalid").hide();
        }
   });
 
