@@ -526,10 +526,10 @@ $(document).ready(function() {
         return re.test(email);
     }
 
-    function isNumberValid(number) {
-        var re = /\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/;
-        return re.test(number);
-    }	
+  //  function isNumberValid(number) {
+   //     var re = /\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/;
+   //     return re.test(number);
+  //  }	
 	
     //check if user is using Safari
     if (navigator.userAgent.match(/OS X.*Safari/) && !navigator.userAgent.match(/Chrome/)) {
@@ -539,9 +539,11 @@ $(document).ready(function() {
    $('#email').bind('input propertychange', function() {
         if (!isValid($(this).val())) { // if email is not valid show error
           // document.getElementById('email-invalid').style.display = 'block';
+		$(".err").append("<img src='images/alert-icon-1551.png'/>");
 		$("#email-invalid").show();
        } else {
            // document.getElementById('email-invalid').style.display = 'none';
+	       	$(".err img:last-child").remove();
 	        $("#email-invalid").hide();
        }
   });
