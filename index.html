@@ -26,19 +26,7 @@
           asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
    
 	<style type="text/css">
-		
-	
-#myForm .emailTick {
-		height: 0px;
-	}
-
-	#myForm .emailTick .fa{
-		width: 17px;
-		color: #47AD09!important;
-		left: calc(100% - 35px);
-		position: relative;
-		top: -42px;
-	}		
+				
 input::-webkit-contacts-auto-fill-button {
   visibility: hidden;
   display: none !important;
@@ -493,6 +481,17 @@ input::-webkit-contacts-auto-fill-button {
 		position: relative;
 		top: -42px;
 	}
+		
+		#myForm .correct {
+		height: 0px;
+	}
+
+	#myForm .correct img {
+		width: 17px;
+		left: calc(100% - 35px);
+		position: relative;
+		top: -42px;
+	}
     </style>
 </head>
 <body>
@@ -512,7 +511,8 @@ input::-webkit-contacts-auto-fill-button {
                 <div class="pure-group">
                    <input class="border" type="text" id="number" name="number" placeholder="Phone number" required="true" />
                    <div class="err"><img id="imgNumber" src="images/alert-icon-1551.png"/></div>
-		   <!--<span id="number-invalid" style="display:none">
+		    <div class="correct"><img id="imgCorrectNo" src="images/if_Tick_Mark_Dark_1398912.png"/></div>
+			<!--<span id="number-invalid" style="display:none">
 			Please enter a valid phone number
 		   </span>-->
                 </div>   		    
@@ -523,9 +523,10 @@ input::-webkit-contacts-auto-fill-button {
                 <div class="pure-group">
                     <!--<label id="emaillbl" for="email"><i>Your</i> Email Address:</label>-->
                     <input class="border" id="email" name="email" type="email" required="true" placeholder="Email" />
-			<div class="emailTick"><i class="fa fa-check-circle fa-fw"></i></div>
+			<!--<div class="emailTick"><i class="fa fa-check-circle fa-fw"></i></div>-->
 			
-		<!--<div class="err"><img id="imgEmail" src="images/alert-icon-1551.png"/></div>-->
+		   <div class="err"><img id="imgEmail" src="images/alert-icon-1551.png"/></div>
+		   <div class="correct"><img id="imgCorrectEmail" src="images/if_Tick_Mark_Dark_1398912.png"/></div>	
 		   <!-- <span id="email-invalid" style="display:none">
                         Please enter a valid email address
                     </span>-->
@@ -545,6 +546,8 @@ $(document).ready(function() {
 
    $("#imgEmail").hide();
    $("#imgNumber").hide();
+   $("#imgCorrectEmail").hide();
+   $("#imgCorrectNumber").hide();
 	
     function isValid(email) {
         var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
@@ -565,21 +568,25 @@ $(document).ready(function() {
         if (!isValid($(this).val())) { // if email is not valid show error
           // document.getElementById('email-invalid').style.display = 'block';
 		$("#imgEmail").show();
-		$("#email-invalid").show();
+		$("#imgCorrectEmail").hide();
+		//$("#email-invalid").show();
        } else {
            // document.getElementById('email-invalid').style.display = 'none';
 	       	$("#imgEmail").hide();
-	        $("#email-invalid").hide();
+	        $("#imgCorrectEmail").show();
+	       // $("#email-invalid").hide();
        }
   });
 	
     $('#number').bind('input propertychange', function() {
         if (!isNumberValid($(this).val())) { // if number is not valid show error
-		$("#imgNumber").show();
-		$("#number-invalid").show();
+		$("#imgCorrectNumber").hide();
+		$("#imgNumber").show();	
+		//$("#number-invalid").show();
        } else {
-	       $("#imgNumber").hide();
-	       $("#number-invalid").hide();
+	       $("#imgNumber").hide();	    
+	       $("#imgCorrectNumber").show();
+	      // $("#number-invalid").hide();
        }
   });
 
