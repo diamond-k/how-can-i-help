@@ -367,7 +367,7 @@ input::-webkit-contacts-auto-fill-button {
         }
 		
  .pure-form input[type=text], .pure-form textarea, .pure-form input[type=email]  {
-        padding: .5em .6em;
+       /* padding: .5em .6em;*/
         border: 1px solid #efefef;
         -moz-box-shadow:none;
         -webkit-box-shadow:none;
@@ -547,7 +547,7 @@ $(document).ready(function() {
    $("#imgEmail").hide();
    $("#imgNumber").hide();
    $("#imgCorrectEmail").hide();
-   $("#imgCorrectNumber").hide();
+   $("#imgCorrectNo").hide();
 	
     function isValid(email) {
         var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
@@ -580,12 +580,12 @@ $(document).ready(function() {
 	
     $('#number').bind('input propertychange', function() {
         if (!isNumberValid($(this).val())) { // if number is not valid show error
-		$("#imgCorrectNumber").hide();
+		$("#imgCorrectNo").hide();
 		$("#imgNumber").show();	
 		//$("#number-invalid").show();
        } else {
 	       $("#imgNumber").hide();	    
-	       $("#imgCorrectNumber").show();
+	       $("#imgCorrectNo").show();
 	      // $("#number-invalid").hide();
        }
   });
