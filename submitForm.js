@@ -60,11 +60,11 @@ function handleFormSubmit(event) {
         hasError= true;
     } 
     
-    if (!isNumberValid(data.number)) {
+   // if (!isNumberValid(data.number)) {
         //document.getElementById('email-invalid').style.display = 'block';
-         $("#number-invalid").show();
-        hasError= true;
-    } 
+     //    $("#number-invalid").show();
+     //   hasError= true;
+  //  } 
     if(hasError == true){
         return false;
     }
