@@ -62,13 +62,13 @@ function handleFormSubmit(event) {
     
     if (!isValid(data.email)) {
         //document.getElementById('email-invalid').style.display = 'block';
-        $("#email-invalid").show();
+       // $("#email-invalid").show();
         $("#imgEmail").show();
         hasError= true;
     } 
     
    if (!isNumberValid(data.number)) {
-         $("#number-invalid").show();
+         //$("#number-invalid").show();
          $("#imgNumber").show();
          hasError= true;
    } 
