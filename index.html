@@ -350,9 +350,8 @@ input::-webkit-contacts-auto-fill-button {
 	#message:active, #message:focus,
 	#email:focus, #email:active {
 		/*background: #F0F0F0;*/
-		border: 1px solid #ccc;
-	}
-		
+		border: 1px solid #b5cd60; /*#ccc;*/
+	}	
 		
     /*for typed input text*/
         input[type="text"] {
@@ -376,7 +375,7 @@ input::-webkit-contacts-auto-fill-button {
         box-shadow: none;
 	-webkit-appearance: none;
         border-radius: 3px;
-	     font-weight: 100;
+	font-weight: 100;
         vertical-align: middle;
         box-sizing: border-box;
     }
@@ -507,32 +506,23 @@ input::-webkit-contacts-auto-fill-button {
             <!--   <link rel="stylesheet" href="https://cdn.rawgit.com/dwyl/html-form-send-email-via-google-script-without-server/master/style.css">-->
             <form id="myForm" novalidate="novalidate" method="POST" class="pure-form pure-form-stacked" action="https://script.google.com/macros/s/AKfycbwTJbaHcfMkvfBmwCSirIpouXaWFPfYSbjW2eyZC3fpPWKpEN0/exec">
                 <div class="pure-group">
-                    <!-- <label id="namelbl" for="name">Name: </label>-->
-                    <input type="text" class="border" id="fullname" name="full name" placeholder="Full name" />
+                  <input type="text" class="border" id="fullname" name="full name" placeholder="Full name" />
+									<div class="err"><img id="imgNameErr"  src="images/alert-icon-1551.png"/></div>
+									<div class="correct"><img id="imgCorrectName" src="images/if_Tick_Mark_Dark_1398912.png"/></div>
                 </div>
                 <div class="pure-group">
-                   <input class="border" type="text" id="number" name="number" placeholder="Phone number" required="true" />
-                   <div class="err"><img id="imgNumber" src="images/alert-icon-1551.png"/></div>
-		    <div class="correct"><img id="imgCorrectNo" src="images/if_Tick_Mark_Dark_1398912.png"/></div>
-			<!--<span id="number-invalid" style="display:none">
-			Please enter a valid phone number
-		   </span>-->
+									<input class="border" type="text" id="number" name="number" placeholder="Phone number" required="true" />
+									<div class="err"><img id="imgNumber" src="images/alert-icon-1551.png"/></div>
+									<div class="correct"><img id="imgCorrectNo" src="images/if_Tick_Mark_Dark_1398912.png"/></div>
                 </div>   		    
-		<div class="pure-group">
-                    <!-- <label id="messagelbl" for="message">Message: </label>-->
-                    <textarea class="border" type="text" id="message" name="message" rows="10" cols="50" placeholder="What services would you require?"></textarea>
-                </div>
-                <div class="pure-group">
-                    <!--<label id="emaillbl" for="email"><i>Your</i> Email Address:</label>-->
-                    <input class="border" id="email" name="email" type="email" required="true" placeholder="Email" />
-			<!--<div class="emailTick"><i class="fa fa-check-circle fa-fw"></i></div>-->
-			
-		   <div class="err"><img id="imgEmail" src="images/alert-icon-1551.png"/></div>
-		   <div class="correct"><img id="imgCorrectEmail" src="images/if_Tick_Mark_Dark_1398912.png"/></div>	
-		   <!-- <span id="email-invalid" style="display:none">
-                        Please enter a valid email address
-                    </span>-->
-                </div>
+							<div class="pure-group">
+								<textarea class="border" type="text" id="message" name="message" rows="10" cols="50" placeholder="What services would you require?"></textarea>
+							</div>
+							<div class="pure-group">
+								<input class="border" id="email" name="email" type="email" required="true" placeholder="Email" />	
+								<div class="err"><img id="imgEmail" src="images/alert-icon-1551.png"/></div>
+								<div class="correct"><img id="imgCorrectEmail" src="images/if_Tick_Mark_Dark_1398912.png"/></div>
+							</div>
                 <div class="wrapper">
                     <button type="submit" id="submitbtn" class="button-success pure-button button-xlarge">
                         <span class="fa fa-paper-plane"></span>&nbsp;Send
@@ -546,10 +536,12 @@ input::-webkit-contacts-auto-fill-button {
 
 $(document).ready(function() {
 
-   $("#imgEmail").hide();
-   $("#imgNumber").hide();
-   $("#imgCorrectEmail").hide();
-   $("#imgCorrectNo").hide();
+      $("#imgEmail").hide();
+      $("#imgNumber").hide();
+      $("#imgCorrectEmail").hide();
+      $("#imgCorrectNo").hide();
+      $("#imgNameErr").hide();
+      $("#imgCorrectName").hide();
 	
     function isValid(email) {
         var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
@@ -561,6 +553,10 @@ $(document).ready(function() {
       return re.test(number);
     }	
 	
+	  function isNameValid(name) {
+			return name.trim() !== "";
+		}
+	
     //check if user is using Safari
     if (navigator.userAgent.match(/OS X.*Safari/) && !navigator.userAgent.match(/Chrome/)) {
         document.body.className += 'safari';
@@ -568,29 +564,41 @@ $(document).ready(function() {
 
    $('#email').bind('input propertychange', function() {
         if (!isValid($(this).val())) { // if email is not valid show error
-          // document.getElementById('email-invalid').style.display = 'block';
-		$("#imgEmail").show();
-		$("#imgCorrectEmail").hide();
-		//$("#email-invalid").show();
+					$("#imgEmail").show();
+					$("#imgCorrectEmail").hide();
+					$("#email").css("border-color", "#d62c0b");
        } else {
-           // document.getElementById('email-invalid').style.display = 'none';
 	       	$("#imgEmail").hide();
 	        $("#imgCorrectEmail").show();
-	       // $("#email-invalid").hide();
+	        $("#email").css("border-color", "#b5cd60");
        }
   });
 	
     $('#number').bind('input propertychange', function() {
         if (!isNumberValid($(this).val())) { // if number is not valid show error
-		$("#imgCorrectNo").hide();
-		$("#imgNumber").show();	
-		//$("#number-invalid").show();
+					$("#imgCorrectNo").hide();
+					$("#imgNumber").show();	
+					$("#fullname").css("border-color", "#d62c0b");
        } else {
 	       $("#imgNumber").hide();	    
 	       $("#imgCorrectNo").show();
-	      // $("#number-invalid").hide();
+	       $("#number").css("border-color", "#b5cd60");
        }
   });
+	
+	 // if name is not valid show error
+   $('#fullname').bind('input propertychange', function() {
+		 if (!isNameValid($(this).val())) {
+			 	$("#imgCorrectName").hide();
+			 	$("#imgNameErr").show();
+			 	$("#fullname").css("border-color", "#d62c0b");
+ } else {
+	 			$("#imgNameErr").hide();
+	 			$("#imgCorrectName").show();
+	 			$("#fullname").css("border-color", "#b5cd60");
+ 			}
+	 });
+
 
 $(document).on('touchstart', '#submitbtn', function(event){
         $("#submitbtn").css("background-color", "#a4bc4f");
