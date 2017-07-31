@@ -10,6 +10,12 @@ function isNumberValid(number) {
     return re.test(number);
 }	
 
+
+     function isNameValid(name) {
+            return name.trim() !== "";
+        }
+
+
 // get all data in form and return object
 function getFormData() {
     var form = document.getElementById("myForm");
@@ -61,23 +67,28 @@ function handleFormSubmit(event) {
     var hasError = false;
     
     if (!isValid(data.email)) {
-        //document.getElementById('email-invalid').style.display = 'block';
-       // $("#email-invalid").show();
         $("#imgEmail").show();
         hasError= true;
     } 
     
    if (!isNumberValid(data.number)) {
-         //$("#number-invalid").show();
          $("#imgNumber").show();
          hasError= true;
    } 
     
-    if(hasError == true){
+    
+   if (!isValid(data.email)) {
+				$("#imgEmail").show();
+			 	$("#email").css("border-color", "#d62c0b");
+        hasError= true;
+   }
+
+    
+    if(hasError === true){
         return false;
     }
     
-        if(formSubmitted != true){
+      if(formSubmitted != true){
         formSubmitted = true;
         var btn = document.getElementById("submitbtn");
         btn.innerHTML = "<i class='fa fa-paper-plane'></i>&nbsp;Sending...";     
@@ -101,7 +112,6 @@ function handleFormSubmit(event) {
             return encodeURIComponent(k) + '=' + encodeURIComponent(data[k])
         }).join('&')
 
-        //$.post(url, encoded, function(value){}, "json");
         xhr.send(encoded);
         }
         //return true;    
