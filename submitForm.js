@@ -65,21 +65,22 @@ function handleFormSubmit(event) {
     event.preventDefault();
     var data = getFormData();
     var hasError = false;
-    
-    if (!isValid(data.email)) {
-        $("#imgEmail").show();
-        hasError= true;
-    } 
-    
-   if (!isNumberValid(data.number)) {
-         $("#imgNumber").show();
-         hasError= true;
-   } 
-    
+  
+    if (!isNameValid(data["full name"])) {
+	    $("#imgNameErr").show();
+	    $("#fullname").css("border-color", "#d62c0b");
+	    hasError= true;
+    }
+
+if (!isNumberValid(data.number)) {
+    $("#imgNumber").show();
+    $("#number").css("border-color", "#d62c0b");
+    hasError = true;
+  }    
     
    if (!isValid(data.email)) {
-				$("#imgEmail").show();
-			 	$("#email").css("border-color", "#d62c0b");
+	$("#imgEmail").show();
+	$("#email").css("border-color", "#d62c0b");
         hasError= true;
    }
 
