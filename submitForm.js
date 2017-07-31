@@ -68,19 +68,19 @@ function handleFormSubmit(event) {
   
     if (!isNameValid(data["full name"])) {
 	    $("#imgNameErr").show();
-	    $("#fullname").css("border-color", "#d62c0b");
+	    //$("#fullname").css("border-color", "#d62c0b");
 	    hasError= true;
     }
 
 if (!isNumberValid(data.number)) {
     $("#imgNumber").show();
-    $("#number").css("border-color", "#d62c0b");
+   // $("#number").css("border-color", "#d62c0b");
     hasError = true;
   }    
     
    if (!isValid(data.email)) {
 	$("#imgEmail").show();
-	$("#email").css("border-color", "#d62c0b");
+	//$("#email").css("border-color", "#d62c0b");
         hasError= true;
    }
 
