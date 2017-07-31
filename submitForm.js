@@ -121,6 +121,11 @@ if (!isNumberValid(data.number)) {
 function loaded() {
    
     console.log('contact form submission handler loaded successfully');
+		//clear old values
+			$("#fullname").val("");
+			$("#number").val("");
+			$("#message").val("");
+			$("#email").val("");
     // bind to the submit event of our form
     var form = document.getElementById('myForm');
     form.addEventListener("submit", handleFormSubmit, false);
