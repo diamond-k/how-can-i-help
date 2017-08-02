@@ -5,10 +5,11 @@ function isValid(email) {
 }
 
 
-function isNumberValid(number) {
-    var re = /^(\(?(0|\+44)[1-9]{1}\d{1,4}?\)?\s?\d{3,4}\s?\d{3,4})$/;
-    return re.test(number);
-}	
+ function isNumberValid(number) {
+			// var re = /^(\(?(0|\+44)[1-9]{1}\d{1,4}?\)?\s?\d{3,4}\s?\d{3,4})$/;
+				var re = /^[0-9]+$/;
+                return re.test(number);
+            }	
 
 
      function isNameValid(name) {
