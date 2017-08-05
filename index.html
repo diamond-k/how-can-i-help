@@ -160,20 +160,24 @@ input::-webkit-contacts-auto-fill-button {
 
 	body {
 		margin: 1em 0.5em 0.5em 0.5em;
-		background: #222222 url('images/marion-michele-191320.jpg') no-repeat top center fixed;
+		background: #222222 url('images/marion-michele-191320.png') no-repeat top center fixed;
 		background-size: cover;
 		color: #b5b5b5;
 		font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; /*sans-serif;*/
 		opacity: 0.95;
 	}
-	body.safari {
-	  	margin: 1em 0.5em 0.5em 0.5em;
-		background: #222222 url('images/marion-michele-1913202.jpg') no-repeat top center fixed;
-		background-size: cover;
-		color: #b5b5b5;
-		font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; /*sans-serif;*/
-		opacity: 0.95;
-	}
+	
+
+
+				.disclaimer {
+						color:#b5b5b5;
+						margin: 10px 60px;
+						text-align: center;
+						font-size: 12px;
+						line-height: 15px;
+						}
+		
+		
 	#appView {
 		overflow: hidden;
 		background: #FFFFFF;
@@ -242,10 +246,35 @@ input::-webkit-contacts-auto-fill-button {
 			-o-border-radius: 3px;
     			border-radius: 3px;
 		}
+		
+		
+								h4 {
+								/* font-family: Impact, fantasy; */
+								color: #b5b5b5;
+								/* font-size: 20px; */
+								/*color: #a4bc4f;*/
+								font-size: 24px;
+								 line-height: 26px;
+								/* color: #999; */
+								font-weight: 200;
+								 padding-top: 0px;
+								padding-left: 5px;
+								padding-right: 5px;
+								margin: 0 40px 10px;
+							}
+
+
+						.disclaimer {
+							color:#b5b5b5;
+							margin: 10px 60px;
+							text-align: center;
+							font-size: 12px;
+							line-height: 15px;
+						}
 	}
 
 	/*Tablet(medium)*/
-	@media screen and (min-width : 768px) and (max-width : 1023px) {
+	@media screen and (min-width : 768px) and (max-width : 1024px) {
 		#appView {
 			width: 400px;
 			position: absolute;
@@ -279,7 +308,58 @@ input::-webkit-contacts-auto-fill-button {
 			-o-border-radius: 3px;
     			border-radius: 3px;
 		}
+		
+		h4 {
+			/* font-family: Impact, fantasy; */
+			color: #b5b5b5;
+			/* font-size: 20px; */
+			/*color: #a4bc4f;*/
+			font-size: 24px;
+			line-height: 26px;
+			/* color: #999; */
+			font-weight: 200;
+			padding-top: 0px;
+			padding-left: 5px;
+			padding-right: 5px;
+			margin: 0 40px 10px;
+		}
+					
+		.disclaimer {
+					color:#b5b5b5;
+					margin: 10px 60px;
+					text-align: center;
+					font-size: 12px;
+					line-height: 15px;
+		}
 	}
+
+		
+	/* Smartphones (portrait and landscape) ----------- */
+	@media only screen and (min-device-width : 320px) and (max-device-width : 767px){
+	.disclaimer {
+			color: #b5b5b5;
+			margin: 10px 30px;
+			text-align: center;
+			font-size: 12px;
+			line-height: 15px;
+		}
+
+
+			h4 {
+		/* font-family: Impact, fantasy; */
+		color: #b5b5b5;
+		/* font-size: 20px; */
+		/* color: #a4bc4f; */
+		font-size: 24px;
+		line-height: 26px;
+		/* color: #999; */
+		font-weight: 200;
+		padding-top: 0px;
+		padding-left: 5px;
+		padding-right: 5px;
+		margin: 0 30px 15px;
+	}
+}
 
 
 	.col-md-4 {
@@ -302,33 +382,13 @@ input::-webkit-contacts-auto-fill-button {
 		font-family: Impact, fantasy;
 			}*/
 
-
-		h4 {
-		/* font-family: Impact, fantasy; */
-		/* color: #b5b5b5; */
-		/* font-size: 20px; */
-		color: #a4bc4f;
-		font-size: 32px;
-		line-height: 20px;
-		/* color: #999; */
-		font-weight: 200;
-		/* font-weight: 500; */
-		padding-top: 30px;
-		padding-left: 5px;
-		padding-right: 5px;
-		margin-bottom: 40px;
-	}
-
-
 	h2 {
-		color: #a4bc4f;
-		font-size: 23px;
-		font-weight: 400;
-		text-align: left;
+		font-size: 34px;
+		font-weight: 300;
 		/* padding: 20px 5px 0 5px;*/
 		/*padding: 20px 5px 10px 5px;*/
 		padding: 20px 10px 10px 10px;
-	}
+}
 
 	/*.content-head {
 		<!--  text-transform: uppercase;-->
@@ -351,8 +411,8 @@ input::-webkit-contacts-auto-fill-button {
 	#message:active, #message:focus,
 	#email:focus, #email:active {
 		/*background: #F0F0F0;*/
-		border: 1px solid #a4bc4f;
-		/*#81bc00; #ccc;*/
+		border: 1px solid #ccc; 
+		/*#81bc00; ##a4bc4f;*/
 	}
 		
     /*for typed input text*/
@@ -503,10 +563,8 @@ input::-webkit-contacts-auto-fill-button {
 
     <div class="container body-content">
         <div id="appView" class="col-md-4 col-md-offset-4">
-            <!--<h2 id="intouch" class="content-head is-center intouch"> Are you ready to receive great products and services?</h2>-->
-
-            <h4 id="intouch1" class="content-head is-center">Contact Me!</h4>
-
+		<h2 id="intouch" class="content-head is-center intouch"> Almost there!</h2>
+		<h4 id="intouch1" class="content-head is-center">Please complete and gain instant access</h4>
             <!--   <link rel="stylesheet" href="https://cdn.rawgit.com/dwyl/html-form-send-email-via-google-script-without-server/master/style.css">-->
             <form id="myForm" novalidate="novalidate" method="POST" class="pure-form pure-form-stacked" action="https://script.google.com/macros/s/AKfycbwTJbaHcfMkvfBmwCSirIpouXaWFPfYSbjW2eyZC3fpPWKpEN0/exec">
                 <div class="pure-group">
@@ -532,6 +590,9 @@ input::-webkit-contacts-auto-fill-button {
                         <span class="fa fa-paper-plane"></span>&nbsp;Send
                     </button>
                 </div>
+		    <p class="disclaimer">
+					We respect your privacy your details will never be shared or sold.
+				</p>
             </form>
         </div>
         <!--    <div style="text-align:center" class="pos">&copy; Contact Me <script>document.write(new Date().getFullYear())</script></div>-->
