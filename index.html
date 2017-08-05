@@ -335,7 +335,7 @@ input::-webkit-contacts-auto-fill-button {
 
 		
 	/* Smartphones (portrait and landscape) ----------- */
-	@media only screen and (min-device-width : 320px) and (max-device-width : 767px){
+	@media only screen and (max-device-width : 768px){
 	.disclaimer {
 			color: #b5b5b5;
 			margin: 10px 30px;
@@ -585,12 +585,12 @@ input::-webkit-contacts-auto-fill-button {
             <!--   <link rel="stylesheet" href="https://cdn.rawgit.com/dwyl/html-form-send-email-via-google-script-without-server/master/style.css">-->
             <form id="myForm" novalidate="novalidate" method="POST" class="pure-form pure-form-stacked" action="https://script.google.com/macros/s/AKfycbwTJbaHcfMkvfBmwCSirIpouXaWFPfYSbjW2eyZC3fpPWKpEN0/exec">
                 <div class="pure-group">
-                  <input type="text" class="border" id="fullname" name="full name" placeholder="Full name" />
+                  <input type="text" class="border" autocomplete="off" id="fullname" name="full name" placeholder="Full name" />
 									<div class="err"><img id="imgNameErr"  src="images/alert-icon-1551.png"/></div>
 									<div class="correct"><img id="imgCorrectName" src="images/if_Tick_Mark_Dark_1398912.png"/></div>
                 </div>
                 <div class="pure-group">
-									<input class="border" type="text" id="number" name="number" placeholder="Phone number" required="true" />
+									<input class="border" type="text" autocomplete="off" id="number" name="number" placeholder="Phone number" required="true" />
 									<div class="err"><img id="imgNumber" src="images/alert-icon-1551.png"/></div>
 									<div class="correct"><img id="imgCorrectNo" src="images/if_Tick_Mark_Dark_1398912.png"/></div>
                 </div>   		    
@@ -598,7 +598,7 @@ input::-webkit-contacts-auto-fill-button {
 								<textarea class="border" type="text" id="message" name="message" rows="10" cols="50" placeholder="What services would you require?"></textarea>
 							</div>
 							<div class="pure-group">
-								<input class="border" id="email" name="email" type="email" required="true" placeholder="Email" />	
+								<input class="border" autocomplete="off" id="email" name="email" type="email" required="true" placeholder="Email" />	
 								<div class="err"><img id="imgEmail" src="images/alert-icon-1551.png"/></div>
 								<div class="correct"><img id="imgCorrectEmail" src="images/if_Tick_Mark_Dark_1398912.png"/></div>
 							</div>
